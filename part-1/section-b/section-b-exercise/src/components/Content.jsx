@@ -1,3 +1,5 @@
+// Content renders the parts and their number of exercises
+
 const Part = (props) => {
   return (
     <p>
@@ -7,13 +9,15 @@ const Part = (props) => {
 };
 
 const Content = (props) => {
-  const contentData = props.courseInfo;
+  const contentData = props.parts;
+  // console.log(contentData)
+
   
   return (
     <>
-      <Part name={contentData.part1} exercise={contentData.exercises1} />
-      <Part name={contentData.part2} exercise={contentData.exercises2} />
-      <Part name={contentData.part3} exercise={contentData.exercises3} />
+      <Part name={contentData[0].name} exercise={contentData[0].exercises} />
+      <Part name={contentData[1].name} exercise={contentData[1].exercises} />
+      <Part name={contentData[2].name} exercise={contentData[2].exercises} />
     </>
   );
 };
